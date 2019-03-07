@@ -1,0 +1,100 @@
+$sivaStrelicaDesno : './Img/arrow-gray-right.png';
+$plavaStrelicaDesno : './Img/arrow-blue-right.png';
+$sivaStrelicaLijevo : './Img/arrow-gray-left.png';
+$plavaStrelicaLijevo : './Img/arrow-blue-left.png';
+
+.container{
+  width: 950px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //align-content: flex-end;
+  //list-style: none;
+}
+.left{
+  flex: 2 0 0;
+  //background-color: red;
+  margin-right: 10px;
+  overflow: hidden;
+  //white-space: nowrap;
+
+  img{
+    height: 200px;
+		float: right;
+		margin: 0 0 10px 10px;
+		border-radius: 2%;
+  }
+}
+.right{
+  flex: 1 0 0;
+  //background-color: green;
+  margin-left: 10px;
+}
+.firstRow, .secondRow{
+  display: flex;
+  overflow: hidden;
+  list-style: none;
+  flex-direction: row-reverse;
+  padding-right: 20px;
+}
+.secondRow{
+  //margin-right: 0;
+}
+.arrows{
+  //width: 60px;
+  margin: 0;
+  display: flex;
+  list-style: none;
+  margin-right: 20px;
+  flex-direction: column;
+  float: right;
+  
+  .Dstrelica, .Lstrelica{
+    padding: 10px 15px;
+    border: solid #DDDDDD 1px;
+    border-radius: 5px;
+    .img{
+      height: 30px;
+      width: 20px;
+      margin: 0;
+    }
+    &:hover{
+      border: solid #144980 1px;
+    }
+
+  }
+  .Dstrelica{
+    margin-bottom: 10px;
+    .img{
+      background-image: url($sivaStrelicaDesno);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &:hover{
+      .img{
+        background: url($plavaStrelicaDesno);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .Lstrelica{
+    .img{
+      background-image: url($sivaStrelicaLijevo);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &:hover{
+      .img{
+        background: url($plavaStrelicaLijevo);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
