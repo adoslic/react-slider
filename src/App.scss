@@ -98,3 +98,30 @@ $plavaStrelicaLijevo : './Img/arrow-blue-left.png';
     }
   }
 }
+.animation{
+	transition: all 1s linear;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-o-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  transform: translate(300px,0);
+}
+// .animation{
+//   transform: translateX(-100%);
+// }
+// .animationRight{
+//   -webkit-transform: translate(3em,0);
+//   -moz-transform: translate(3em,0);
+//   -o-transform: translate(3em,0);
+//   -ms-transform: translate(3em,0);
+//   transform: translate(3em,0);
+//   opacity: 0;
+// }
+// .animationLeft{
+//   -webkit-transform: translate(-3em,0);
+//   -moz-transform: translate(-3em,0);
+//   -o-transform: translate(-3em,0);
+//   -ms-transform: translate(-3em,0);
+//   transform: translate(-3em,0);
+//   opacity: 0;
+// }

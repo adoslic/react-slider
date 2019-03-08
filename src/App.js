@@ -23,8 +23,7 @@ class App extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      articles: [],
-      articleLength: 0
+      articles: []
     }
   }
   componentWillMount() {
@@ -37,7 +36,7 @@ class App extends Component {
           this.setState({
             isLoaded: true,
             articles: result.articles,
-            articleLength: result.articles.length
+            //articleLength: result.articles.length
           });
           console.log(result);
         },
@@ -55,16 +54,32 @@ class App extends Component {
     
   rightClick = () =>{
     //console.log("desno");
-    let x= ReactDOM.findDOMNode(this.refs.firstRow).firstChild;
-    //this.refs.firstRow.firstChild;
+    let z = ReactDOM.findDOMNode(this.refs.firstRow);
 
-    ReactDOM.findDOMNode(this.refs.firstRow).append(x);
-    /*this.refs.firstRow.append(x);;*/
+    let promise = new Promise(
+      function(resolve, reject) {
+        
+      let xyz = true;
+      z.classList.add('animation');
+      
+      ReactDOM.findDOMNode(this.refs.firstRow).append(ReactDOM.findDOMNode(this.refs.firstRow).firstChild);
+      
+      ReactDOM.findDOMNode(this.refs.secondRow).append(ReactDOM.findDOMNode(this.refs.secondRow).firstChild);
 
-    /*let y= this.refs.secondRow.firstChild;
-    this.refs.secondRow.append(y)*/
-    let y= ReactDOM.findDOMNode(this.refs.secondRow).firstChild;
-    ReactDOM.findDOMNode(this.refs.secondRow).append(y);
+      if(xyz){
+        if (z.classList.contains('animation')) {
+          //resolve(z.classList.remove('animation'));
+        }
+      }
+      else{
+        reject('reject');
+      }
+    });
+
+    promise.then(function(){
+      console.log("test");
+    })
+    
   }
   leftClick = () =>{
     //console.log("lijevo");
@@ -88,8 +103,9 @@ class App extends Component {
               
               <FirstRowImage
                 ref="firstRow"
-                articles={this.state.articles.slice(0, 5)}
-                //length={this.state.articleLength}
+                //className={this.state.active ? 'animation': null} 
+                articles={this.state.articles.slice(0, Math.round(this.state.articles.length/2)+1)}
+                //active={this.state.active}
               />
 
               <ul className="arrows">
@@ -105,7 +121,7 @@ class App extends Component {
 
               <SecondRowImage
                  ref="secondRow"
-                 articles={this.state.articles.slice(5, 10)}
+                 articles={this.state.articles.slice(Math.round(this.state.articles.length/2)+1, this.state.articles.length)}
                  //length={this.state.articleLength}
               />
             </div>
