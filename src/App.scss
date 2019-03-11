@@ -15,10 +15,10 @@ $plavaStrelicaLijevo : './Img/arrow-blue-left.png';
 .left{
   flex: 2 0 0;
   //background-color: red;
+  border: solid red 1px;
   margin-right: 10px;
   overflow: hidden;
   //white-space: nowrap;
-
   img{
     height: 200px;
 		float: right;
@@ -33,13 +33,13 @@ $plavaStrelicaLijevo : './Img/arrow-blue-left.png';
 }
 .firstRow, .secondRow{
   display: flex;
-  overflow: hidden;
+  //overflow: hidden;
   list-style: none;
   flex-direction: row-reverse;
   padding-right: 20px;
-}
-.secondRow{
-  //margin-right: 0;
+  border: solid red 1px;
+  // position: relative;
+  // right: -300px;
 }
 .arrows{
   //width: 60px;
@@ -62,7 +62,6 @@ $plavaStrelicaLijevo : './Img/arrow-blue-left.png';
     &:hover{
       border: solid #144980 1px;
     }
-
   }
   .Dstrelica{
     margin-bottom: 10px;
@@ -104,24 +103,25 @@ $plavaStrelicaLijevo : './Img/arrow-blue-left.png';
 	-moz-transition: all 1s linear;
 	-o-transition: all 1s linear;
   -ms-transition: all 1s linear;
-  transform: translate(300px,0);
+  //transform: translate(300px,0);
 }
-// .animation{
-//   transform: translateX(-100%);
-// }
-// .animationRight{
-//   -webkit-transform: translate(3em,0);
-//   -moz-transform: translate(3em,0);
-//   -o-transform: translate(3em,0);
-//   -ms-transform: translate(3em,0);
-//   transform: translate(3em,0);
-//   opacity: 0;
-// }
-// .animationLeft{
-//   -webkit-transform: translate(-3em,0);
-//   -moz-transform: translate(-3em,0);
-//   -o-transform: translate(-3em,0);
-//   -ms-transform: translate(-3em,0);
-//   transform: translate(-3em,0);
-//   opacity: 0;
-// }
+
+.fade-out{
+	transition: all 1s linear;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-o-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  opacity: 0;
+}
+.fade-in{
+	transition: all 1s linear;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-o-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  opacity: 1;
+}
+.Opacity{
+  opacity: 0;
+}
